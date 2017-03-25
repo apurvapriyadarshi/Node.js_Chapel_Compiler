@@ -2,6 +2,7 @@ var http = require('http');
 var fs = require('fs');
 var formidable = require("formidable");
 var util = require('util');
+var spawn = require('child_process').spawn;
 
 var server = http.createServer(function (req, res) {
     if (req.method.toLowerCase() == 'get') {
@@ -30,14 +31,15 @@ function processAllFieldsOfTheForm(req, res) {
         //Store the data from the fields in your data store.
         //The data store could be a file or database or any other store based
         //on your application.
-        res.writeHead(200, {
-            'content-type': 'text/plain'
-        });
-        res.write('received the data:\n\n');
-        res.end(util.inspect({
-            fields: fields,
-            files: files
-        }));
+        fs.writeFile('code/fi.chpl',fields.codeeditor,null,function(error,data){
+          if(error) throw error;
+           else { var child1=spawn('chpl', ['fi.chpl']);
+                  //var child2=spawn('./a.out');
+                  child2.stdout.pipe(fields.outputviewer);
+                }
+            
+	});
+       
     });
 }
 
