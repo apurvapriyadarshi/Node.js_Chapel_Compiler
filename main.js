@@ -33,9 +33,18 @@ function processAllFieldsOfTheForm(req, res) {
         //on your application.
         fs.writeFile('code/fi.chpl',fields.codeeditor,null,function(error,data){
           if(error) throw error;
-           else { var child1=spawn('chpl', ['fi.chpl']);
-                  //var child2=spawn('./a.out');
-                  child2.stdout.pipe(fields.outputviewer);
+           else {  const exec = require('child_process').exec;
+exec('chpl code/fi.chpl', (err, stdout, stderr) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  exec('./a.out', (err, stdout, stderr) => { console.log(stdout);
+  
+});
+});
+
+                
                 }
             
 	});
