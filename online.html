@@ -14,10 +14,13 @@
   <nav class="navbar navbar-light" style="background-color:  #aed6f1;">
         <a class="nav-link disabled" href="#"><b>Try Chapel Online</b></a>
   </nav>
-  <div id="filedetails">
-  <h6 style="margin-left:40px; padding-top:60px;">Filename:</h6>
+
+  <form action="http://localhost:8000/form_get" method="GET" enctype="multipart/form-data">
+  
+  <div class="filedetails" style="padding:20px">
+  <label for="fname">Filename:</label>
+  <input class="filedetails" id="fname" type="text" placeholder="Eg: mypgm.chpl" name="filename">
   </div>
-  <form action="" method="post" enctype="multipart/form-data">
   <div id="editor">
    <textarea name="codeeditor" id = "myCode" placeholder="Enter the code ...." style="margin-top:10px; margin-left:40px; width:675px; height:445px;resize:none;" ></textarea>
   </div>
@@ -30,7 +33,7 @@ function getCode() {
 	console.log(code);
 } 
 </script> -->
- </form>
+</form>
    <textarea name="outputviewer" placeholder="Output" style="margin-top:10px; margin-left:40px;;margin-bottom:50px; width:675px; height:200px;resize:none;" ></textarea>
 </body>
 </html>
