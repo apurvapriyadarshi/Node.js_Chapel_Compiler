@@ -7,4 +7,5 @@ Technology used:<br>
 4.HTML<br>
 5.Pug template(Node.js Template)<br>
 
-The platform is now working fine it compiles the chapel code and shows the output and errors respectively. Now working on the deployment.
+<b>The platform is now working fine it compiles the chapel code and shows the output and errors respectively. Now working on the deployment.<b>
+<b>Removing some minor mistakes in the working platform.Which will make the platform more appealing.<b>
