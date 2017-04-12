@@ -4,10 +4,6 @@ var app=express();
 var shell_escape=require('shell-escape');
 const pug = require('pug');
 
-/*app.get('/online.html',function(req,res) {
-  res.sendFile( __dirname +"/"+ "online.html");
-})
-*/
 app.set('view engine', 'pug')
 app.get('/', function (req, res) {
   res.render('mainpage.pug')
