@@ -23,8 +23,7 @@ app.get('/form_get',function(req,res){
                 var arg1=['chpl' , req.query.filename];
 	         	     exec(shell_escape(arg1), (err, stdout, stderr) => {
   		            if (err) {
-    			               console.error(err);
-    			                 return;
+    			               res.render('mainpage', { myOutput: stderr })
       			               }
                 var arg2=['./a.out'];
                 exec(shell_escape(arg2), (err, stdout, stderr) => { 
