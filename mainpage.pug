@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Try Chapel Online
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+  body
+    nav.navbar.navbar-light(style='background-color:  #aed6f1;')
+      a.nav-link.disabled(href='#')
+        b Try Chapel Online
+    form(action='http://localhost:8000/form_get', method='GET', enctype='multipart/form-data')
+      .filedetails(style='padding:20px')
+        label(for='fname') Filename:
+        |  
+        input#fname.filedetails(type='text', placeholder='Eg: mypgm.chpl', name='filename')
+      #editor
+        textarea#myCode(name='codeeditor', placeholder='Enter the code ....', style='margin-top:10px; margin-left:40px; width:675px; height:445px;resize:none;')
+      |  
+      input(type='submit', value='Compile')
+    textarea#myOutput(name='outputviewer', placeholder='Output', style='margin-top:10px; margin-left:40px;;margin-bottom:50px; width:675px; height:200px;resize:none;') #{myOutput}
+
